@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class player_controller : MonoBehaviour
 {
+    public GameObject TurnController;
     public Animator animator;
     public ParticleSystem particles;
+    
     public float wall_check_distance = 1f;
     public LayerMask what_is_wall;
     public LayerMask what_is_enemy;
@@ -48,8 +50,9 @@ public class player_controller : MonoBehaviour
 
     void Forward()
     {
+        //TurnController.GetComponent<Turn_controller>().move_stuff();
 
-        //spriter_renderer.sprite = playerUp;
+        FindObjectOfType<AudioHandler>().PlaySound("Player", "player_walk");
         animator.SetInteger("direction", 1);
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(forward_attackPoint.position, attackRange, what_is_enemy);
@@ -76,7 +79,7 @@ public class player_controller : MonoBehaviour
 
     void Backward()
     {
-        //spriter_renderer.sprite = playerDown;
+        FindObjectOfType<AudioHandler>().PlaySound("Player", "player_walk");
         animator.SetInteger("direction", 2);
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(backward_attackPoint.position, attackRange, what_is_enemy);
@@ -103,7 +106,7 @@ public class player_controller : MonoBehaviour
 
     void Left()
     {
-        //spriter_renderer.sprite = playerLeft;
+        FindObjectOfType<AudioHandler>().PlaySound("Player", "player_walk");
         animator.SetInteger("direction", 4);
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(left_attackPoint.position, attackRange, what_is_enemy);
@@ -130,10 +133,11 @@ public class player_controller : MonoBehaviour
 
     void Right()
     {
-        //spriter_renderer.sprite = playerRight;
+        FindObjectOfType<AudioHandler>().PlaySound("Player", "player_walk");
         animator.SetInteger("direction", 3);
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(right_attackPoint.position, attackRange, what_is_enemy);
+        //hitInfo.transform.tag --   use this to get function
 
         if (hitEnemies.Length > 0)
         {
@@ -147,7 +151,7 @@ public class player_controller : MonoBehaviour
         else
         {
             RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.right, wall_check_distance, what_is_wall);
-
+            
             if (!hitInfo)
             {
                 transform.Translate(move_distance, 0, 0);

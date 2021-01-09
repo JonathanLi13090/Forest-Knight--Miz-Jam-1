@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class player_take_damage: MonoBehaviour
 {
+   
     public int max_health;
     public ParticleSystem blood_particles;
     private int current_health;
@@ -35,13 +36,16 @@ public class player_take_damage: MonoBehaviour
     public void TakeDamage(int damage, int direction)
     {
         current_health -= damage;
-
+        blood_particles.Play();
         if (current_health <= 0)
         {
+            FindObjectOfType<AudioHandler>().PlaySound("Player", "player_die");
             Die();
+           
         }
         else
         {
+            FindObjectOfType<AudioHandler>().PlaySound("Player", "player_hurt");
             if (direction == 1)
             {
 

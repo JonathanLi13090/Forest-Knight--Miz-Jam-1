@@ -17,7 +17,9 @@ public class scene_manager : MonoBehaviour
             }
             else if (scene_number == 2)
             {
+                
                 SceneManager.LoadScene("end");
+                //FindObjectOfType<AudioHandler>().PlaySound("player", "win_sound"); 
             }
             else if (scene_number == 3)
             {
