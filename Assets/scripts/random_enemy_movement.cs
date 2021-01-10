@@ -87,7 +87,7 @@ public class random_enemy_movement: MonoBehaviour
 
                 RaycastHit2D wallDetection = Physics2D.Raycast(transform.position, Vector2.right, wall_check_distance, what_is_wall);
                 if (!wallDetection)
-                {
+                {  
                     transform.Translate(move_distance, 0, 0);
                 }
             }

@@ -49757,6 +49757,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9114829676794756024, guid: 6f5b33b975c8fa14a99b584ec5f29637,
+        type: 3}
+      propertyPath: audioClips.Array.data[3].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114829676794756024, guid: 6f5b33b975c8fa14a99b584ec5f29637,
+        type: 3}
+      propertyPath: audioClips.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114829676794756024, guid: 6f5b33b975c8fa14a99b584ec5f29637,
+        type: 3}
+      propertyPath: audioClips.Array.data[6].clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114829676794756024, guid: 6f5b33b975c8fa14a99b584ec5f29637,
+        type: 3}
+      propertyPath: audioClips.Array.data[3].clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a450fd113742674489beeee3393d535, type: 3}
+    - target: {fileID: 9114829676794756024, guid: 6f5b33b975c8fa14a99b584ec5f29637,
+        type: 3}
+      propertyPath: audioClips.Array.data[6].Name
+      value: win_sound
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114829676794756024, guid: 6f5b33b975c8fa14a99b584ec5f29637,
+        type: 3}
+      propertyPath: audioClips.Array.data[6].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: f2b692b0ce6d34c47a60fc69f17df6a5, type: 3}
     - target: {fileID: 9114829676794756025, guid: 6f5b33b975c8fa14a99b584ec5f29637,
         type: 3}
       propertyPath: m_Name

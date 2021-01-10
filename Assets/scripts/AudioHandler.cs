@@ -15,13 +15,13 @@ public class AudioHandler : MonoBehaviour
         fxSounds.Add(PlayerSound);
         fxSounds.Add(EnemySound);
     }
-
+    // Step 4: locate the sound Clip and play it.
     public void PlaySound(int soundSource, int audioIndex)
     {
         fxSounds[soundSource].clip = audioClips[audioIndex].GetClip();
         fxSounds[soundSource].Play();
     }
-
+    //Old playsound function
     public void PlaySound(string sourceName, AudioClip clip)
     {
         if (sourceName == "Player" || sourceName == "player")
@@ -32,19 +32,24 @@ public class AudioHandler : MonoBehaviour
         {
             EnemySound.clip = clip; EnemySound.Play();
         }
+        else if (sourceName == "background" || sourceName == "Background")
+        {
+            Background.clip = clip; Background.Play();
+        }
     }
-
+    // Step 3 : locate the source source
     public void PlaySound(string sourceName, int audioIndex)
     {
         if (sourceName == "Player" || sourceName == "player") PlaySound(1, audioIndex);
         if (sourceName == "Background" || sourceName == "background") PlaySound(0, audioIndex);
+        if (sourceName == "enemy" || sourceName == "Enemy") PlaySound(2, audioIndex);
     }
-
+    // Step 1: Play sound using sourceName and soundclass
     public void PlaySound(string sourceName, string soundclass)
     {
         PlaySound(sourceName, GetSoundClass(soundclass));
     }
-
+    // Step 2: get the sound index using soundClass
     int GetSoundClass(string name)
     {
         int index = 0;
@@ -57,7 +62,7 @@ public class AudioHandler : MonoBehaviour
         return -1;
     }
 }
-
+    //Sound Resource class
 [System.Serializable]
 public class SoundClass
 {

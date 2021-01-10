@@ -21,13 +21,13 @@ public class enemy_damage : MonoBehaviour
 
         if(current_health <= 0)
         {
-            FindObjectOfType<AudioHandler>().PlaySound("player", "player_die");
+            FindObjectOfType<AudioHandler>().PlaySound("enemy", "player_die");
             Die();
             
         }
         else
         {
-            FindObjectOfType<AudioHandler>().PlaySound("player", "enemy_hit");
+            FindObjectOfType<AudioHandler>().PlaySound("enemy", "enemy_hit");
             if (direction == 1)
             {
 
