@@ -13,7 +13,7 @@ public class scene_manager : MonoBehaviour
         {
             if(scene_number == 1)
             {
-                SceneManager.LoadScene("tutorial");
+                SceneManager.LoadScene("main level");
             }
             else if (scene_number == 2)
             {
@@ -23,7 +23,7 @@ public class scene_manager : MonoBehaviour
             }
             else if (scene_number == 3)
             {
-                SceneManager.LoadScene("level-1");
+                SceneManager.LoadScene("menu");
             }
         }
     }
